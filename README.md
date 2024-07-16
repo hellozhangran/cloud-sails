@@ -5,3 +5,7 @@
 * 前端web站点，react + nextjs
 * 客户端使用android + iOS 套壳rn
 * 客户端用electron
+
+*** 
+
+java、go、pixijs、
