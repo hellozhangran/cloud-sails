@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "CloudSails-Search-Helper",
+  "version": "1.0.0",
+  "description": "搜索助手",
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["src/main.js"]
+    }
+  ],
+  "background":{
+    "service_worker": "src/service-worker.js"
+  },
+  "permissions": [
+    "downloads"
+  ],
+  "icons": {
+    "16": "src/logo-sails-min.png",
+    "32": "src/logo-sails-min.png",
+    "48": "src/logo-sails.png",
+    "128": "src/logo-sails.png"
+  }
+}
