@@ -1,3 +1,4 @@
+console.log('content_scripts: main.js loaded');
 
 /**
  * 显示网络图片的内存大小
@@ -43,3 +44,33 @@ document.addEventListener('dragend',async function(e){
       await chrome.runtime.sendMessage({type:'down',data:e.target.src});
   }
 })
+
+/**
+ * 百度首页
+ * 1. 添加时间，监听点击事件
+ */
+
+
+clearContentRight();
+appendContentRight('answer ready...');
+// 监听百度首页搜索按钮
+// 添加点击事件
+document.querySelector('.s_btn_wr').addEventListener('click', (e) => {
+  console.log('点击百度首页搜索按钮');
+  clearContentRight();
+});
+
+// 监听input标签的change事件
+document.querySelector("#kw").addEventListener('input', (e) => {
+  console.log('监听input标签的change事件');
+  appendContentRight(e.target.value);
+});
+
+function clearContentRight() {
+  document.querySelector("#content_right").innerHTML = '';
+}
+
+function appendContentRight(content) {
+  document.querySelector("#content_right").innerHTML = content;
+}
+
